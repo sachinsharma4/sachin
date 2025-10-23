@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Sharma | Researcher & Developer Portfolio</title>
+    <!-- Load Tailwind CSS via CDN for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles and configuration */
+        :root {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background matching GitHub theme */
+            color: #c9d1d9; /* Light text color */
+        }
+        /* Custom utilities for icon replacement (using Lucide-like classes) */
+        .icon {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .icon-mail:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>'); }
+        .icon-github:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0-1.5-.72-2.5-1.93-2.5a6.52 6.52 0 0 0-3.84 1.48C13.88 1 12.87 0 11.85 0c-1.03 0-2.04 1-2.92 2.05a6.53 6.53 0 0 0-3.84-1.48c-1.21 0-1.93 1-1.93 2.5a5.07 5.07 0 0 0 .09 1.77A5.44 5.44 0 0 0 2 11.23c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 19Z"/></svg>'); }
+        .icon-linkedin:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 0-6 6v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>'); }
+        .icon-code:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>'); }
+        .icon-book:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>'); }
+        .icon-grad:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 9 12 4 17 9"/><path d="M3 11l9 5 9-5"/></svg>'); }
+        .icon-zap:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'); }
+        .icon-award:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 18 17 23 15.79 13.88"/></svg>'); }
+        .icon-menu:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="18" y2="18"/></svg>'); }
+        .icon-close:before { content: url('data:image/svg+xml;utf8,<svg class="icon" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>'); }
+    </style>
+</head>
+<body class="selection:bg-yellow-600 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-[#0d1117] bg-opacity-90 backdrop-blur-sm z-50 shadow-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-2xl font-bold text-yellow-500 hover:text-yellow-400 transition duration-150">
+                    Sachin <span class="text-gray-200">Portfolio</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#skills" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Projects</a>
+                    <a href="#publications" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Publications</a>
+                    <a href="#education" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Education</a>
+                    <a href="mailto:sachinsharma7673@gmail.com" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-yellow-400 focus:outline-none p-2 rounded-md">
+                        <span id="menu-icon" class="icon icon-menu w-6 h-6"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-gray-900/95 border-t border-gray-800 py-2">
+            <a href="#skills" class="block text-white hover:bg-yellow-600/20 px-4 py-2 text-base font-medium transition duration-150">Skills</a>
+            <a href="#projects" class="block text-white hover:bg-yellow-600/20 px-4 py-2 text-base font-medium transition duration-150">Projects</a>
+            <a href="#publications" class="block text-white hover:bg-yellow-600/20 px-4 py-2 text-base font-medium transition duration-150">Publications</a>
+            <a href="#education" class="block text-white hover:bg-yellow-600/20 px-4 py-2 text-base font-medium transition duration-150">Education</a>
+            <a href="mailto:sachinsharma7673@gmail.com" class="block text-white hover:bg-yellow-600/20 px-4 py-2 text-base font-medium transition duration-150">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero/Home Section -->
+        <section id="home" class="pt-24 pb-16 min-h-screen flex items-center bg-[#0d1117] border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-3/4">
+                        <p class="text-lg text-yellow-500 font-semibold uppercase tracking-widest mb-2">Hello, I'm</p>
+                        <h1 class="text-6xl md:text-8xl font-black text-white leading-tight mb-4">
+                            Sachin Sharma
+                        </h1>
+                        <p class="text-3xl md:text-4xl text-gray-300 font-light mb-6">
+                            Aspiring Researcher & Tech Enthusiast
+                        </p>
+                        <p class="text-xl text-gray-400 max-w-2xl mx-auto md:mx-0 mb-8">
+                            "A lover of knowledge sharing with a focus on **Bioinformatics** and **Full-Stack Development**."
+                        </p>
+                        <div class="flex justify-center md:justify-start space-x-4">
+                            <a 
+                                href="#projects" 
+                                class="px-6 py-3 bg-yellow-600 text-white font-semibold rounded-full hover:bg-yellow-500 transition duration-300 shadow-xl flex items-center"
+                            >
+                                <span class="icon icon-code w-5 h-5 mr-2"></span> View Projects
+                            </a>
+                            <a 
+                                href="https://www.linkedin.com/in/sachin-sharma-2111a8228" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-6 py-3 border-2 border-gray-600 text-gray-300 font-semibold rounded-full hover:bg-gray-800 transition duration-300 flex items-center"
+                            >
+                                <span class="icon icon-linkedin w-5 h-5 mr-2"></span> Connect
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="mt-12 md:mt-0 flex md:flex-col space-x-6 md:space-x-0 md:space-y-6">
+                        <a href="https://www.linkedin.com/in/sachin-sharma-2111a8228" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition duration-300">
+                            <span class="icon icon-linkedin w-8 h-8"></span>
+                        </a>
+                        <a href="https://github.com/sachinsharma4" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition duration-300">
+                            <span class="icon icon-github w-8 h-8"></span>
+                        </a>
+                        <a href="mailto:sachinsharma7673@gmail.com" class="text-gray-400 hover:text-yellow-500 transition duration-300">
+                            <span class="icon icon-mail w-8 h-8"></span>
+                        </a>
+                        <!-- Placeholder for Researchgate/Google Scholar -->
+                        <span title="Researchgate & Google Scholar" class="text-gray-400 hover:text-yellow-500 transition duration-300 cursor-help">
+                            <span class="icon icon-book w-8 h-8"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-900 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-10 border-b-4 border-yellow-500 pb-2 flex items-center">
+                    <span class="icon icon-zap w-7 h-7 mr-3 text-yellow-500"></span> Technical Expertise
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Web Development & Backend -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl border-t-4 border-yellow-600">
+                        <h3 class="text-xl font-bold text-white mb-4">Web Development & Backend</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">React Js, NEXT JS</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Tailwind CSS, Javascript, HTML, CSS</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">NodeJs, Express, MongoDB</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Firebase, SQLite, GraphQL</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Git and Github (version control)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Programming & ML -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl border-t-4 border-yellow-600">
+                        <h3 class="text-xl font-bold text-white mb-4">Programming & ML</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Python, C, C++, Java</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Statistics and Mathematics</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Numpy, Pandas, Tensorflow</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Bioinformatics & Lab Skills -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl border-t-4 border-yellow-600">
+                        <h3 class="text-xl font-bold text-white mb-4">Bioinformatics & Lab Skills</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Molecular visualization (nglview)</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Biopython, NCBI, PDB Databases</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">DLS, UV-Vis Spectrophotometry</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Light Microscopy, PH meter</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Design & Multimedia -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl border-t-4 border-yellow-600">
+                        <h3 class="text-xl font-bold text-white mb-4">Design & Multimedia</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Figma, Adobe Illustrator, Photoshop</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">Premiere Pro, After Effects</span></li>
+                            <li class="flex items-center text-gray-400 text-sm"><span>&gt;</span><span class="ml-2">MS Excel, Word, PowerPoint</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-[#0d1117] border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-10 border-b-4 border-yellow-500 pb-2 flex items-center">
+                    <span class="icon icon-code w-7 h-7 mr-3 text-yellow-500"></span> Selected Projects
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- Project 1: Fungi Database -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl transition-transform transform hover:scale-[1.02] duration-300 flex flex-col justify-between border border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">Full Stack Fungi Database</h3>
+                            <p class="text-sm font-mono text-gray-400 mb-3">NEXT JS, MongoDB</p>
+                            <p class="text-gray-300 mb-4 text-balance">A comprehensive full-stack database application designed to manage and display fungal species information. Includes a live link to the deployed application.</p>
+                        </div>
+                        <a href="https://dev-puce.vercel.app/" target="_blank" rel="noopener noreferrer" class="self-start px-5 py-2 bg-yellow-600 text-white font-semibold rounded-full hover:bg-yellow-500 transition duration-300 shadow-md">
+                            View Project Link &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Project 2: Academic Resource -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl transition-transform transform hover:scale-[1.02] duration-300 flex flex-col justify-between border border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">Academic Resource Web App</h3>
+                            <p class="text-sm font-mono text-gray-400 mb-3">NEXT JS, MongoDB</p>
+                            <p class="text-gray-300 mb-4 text-balance">A full-stack web application for organizing, sharing, and managing academic resources. Source code available on GitHub (implied).</p>
+                        </div>
+                        <a href="https://academic-resource-webapp.vercel.app/" target="_blank" rel="noopener noreferrer" class="self-start px-5 py-2 bg-yellow-600 text-white font-semibold rounded-full hover:bg-yellow-500 transition duration-300 shadow-md">
+                            View Project Link &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Project 3: Protein Visualization -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl transition-transform transform hover:scale-[1.02] duration-300 flex flex-col justify-between border border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">Protein Visualization Tool</h3>
+                            <p class="text-sm font-mono text-gray-400 mb-3">nglview, Biopython</p>
+                            <p class="text-gray-300 mb-4 text-balance">A bioinformatics project utilizing Python libraries to render and analyze protein structures in a Colaboratory environment.</p>
+                        </div>
+                        <!-- Placeholder link as original was to a private colab notebook -->
+                        <a href="#" class="self-start px-5 py-2 bg-gray-600 text-white font-semibold rounded-full cursor-default">
+                            Code Snippet Available (Ask for details)
+                        </a>
+                    </div>
+                    
+                    <!-- Project 4: Basic Web Apps -->
+                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl transition-transform transform hover:scale-[1.02] duration-300 flex flex-col justify-between border border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">Web Utility Suite (Tic-Tac-Toe & Calculator)</h3>
+                            <p class="text-sm font-mono text-gray-400 mb-3">HTML, CSS, Javascript</p>
+                            <p class="text-gray-300 mb-4 text-balance">Foundation-level frontend projects showcasing pure Javascript for logic and interaction.</p>
+                        </div>
+                        <!-- Placeholder link as original was to two different pages -->
+                        <a href="#" class="self-start px-5 py-2 bg-gray-600 text-white font-semibold rounded-full cursor-default">
+                            Live Demo Available (Ask for details)
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications & Achievements Section -->
+        <section id="publications" class="py-20 bg-gray-900 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-10 border-b-4 border-yellow-500 pb-2 flex items-center">
+                    <span class="icon icon-book w-7 h-7 mr-3 text-yellow-500"></span> Publications & Achievements
+                </h2>
+
+                <!-- Publications List -->
+                <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Journal Publications</h3>
+                <div class="space-y-6">
+                    <div class="bg-[#161b22] p-5 rounded-lg shadow-xl border-l-4 border-yellow-600">
+                        <p class="text-lg font-semibold text-white mb-1">Nanotechnological interventions in sustainable agriculture.</p>
+                        <p class="text-sm text-yellow-400 italic mb-2">Indian Journal of Biochemistry and Biophysics (IJBB), 2022</p>
+                        <p class="text-gray-400 text-sm">Citation: Sachin, Raj R., Dhiman S., Shakya L. (2022). DOI: 10.56042/ijbb.v59i12.67308.</p>
+                    </div>
+                    <div class="bg-[#161b22] p-5 rounded-lg shadow-xl border-l-4 border-yellow-600">
+                        <p class="text-lg font-semibold text-white mb-1">Phytoremediation of Sewage Water for Raising Potted Plants using Lemna sp.</p>
+                        <p class="text-sm text-yellow-400 italic mb-2">Journal of Bioresearch, 2022</p>
+                        <p class="text-gray-400 text-sm">Citation: Sachin, Raj R., Kathpalia R., Kaur I. (2022). DOI: 10.56875/7</p>
+                    </div>
+                    <div class="bg-[#161b22] p-5 rounded-lg shadow-xl border-l-4 border-yellow-600">
+                        <p class="text-lg font-semibold text-white mb-1">Plants as a source of antimalarial drugs.</p>
+                        <p class="text-sm text-yellow-400 italic mb-2">International Research Journal of Management Sciences & Technology, 2023</p>
+                        <p class="text-gray-400 text-sm">Citation: Dr. Ram Babu, Dr. Sunil Kumar dhiman... Sachin. (2023).</p>
+                    </div>
+                </div>
+
+                <!-- Achievements List -->
+                <h3 class="text-2xl font-bold text-white mt-12 mb-4 border-b border-gray-700 pb-2">Key Academic Achievements</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start bg-[#161b22] p-4 rounded-lg shadow-md">
+                        <span class="icon icon-award w-5 h-5 mr-3 text-yellow-400 flex-shrink-0 mt-1"></span>
+                        <p class="text-gray-300">Cracked **CUET-PG (COQP06)** with 219 out of 300 marks in 2025.</p>
+                    </div>
+                    <div class="flex items-start bg-[#161b22] p-4 rounded-lg shadow-md">
+                        <span class="icon icon-award w-5 h-5 mr-3 text-yellow-400 flex-shrink-0 mt-1"></span>
+                        <p class="text-gray-300">Cleared **JEE Advanced** (Rank 19579) and **JEE Main** (Rank 16852) in 2021.</p>
+                    </div>
+                    <div class="flex items-start bg-[#161b22] p-4 rounded-lg shadow-md">
+                        <span class="icon icon-award w-5 h-5 mr-3 text-yellow-400 flex-shrink-0 mt-1"></span>
+                        <p class="text-gray-300">Winner of inter-departmental paper presentation competition on “Ecological restoration.”</p>
+                    </div>
+                    <div class="flex items-start bg-[#161b22] p-4 rounded-lg shadow-md">
+                        <span class="icon icon-award w-5 h-5 mr-3 text-yellow-400 flex-shrink-0 mt-1"></span>
+                        <p class="text-gray-300">Secured **90.6% in Class 12**, the highest in the school.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 bg-[#0d1117] border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-10 border-b-4 border-yellow-500 pb-2 flex items-center">
+                    <span class="icon icon-grad w-7 h-7 mr-3 text-yellow-500"></span> Education & Background
+                </h2>
+                <div class="space-y-8">
+
+                    <!-- B.Sc. -->
+                    <div class="relative pl-8 md:pl-12 border-l-4 border-gray-600">
+                        <div class="absolute -left-3 md:-left-4 top-0 w-6 h-6 bg-yellow-600 rounded-full border-4 border-[#0d1117]"></div>
+                        <p class="text-xs font-semibold uppercase text-yellow-400">2022 - Present</p>
+                        <h3 class="text-xl font-bold text-white mt-1">B.Sc. Hons. Botany</h3>
+                        <p class="text-gray-300 italic">Kirori Mal College, University of Delhi</p>
+                        <p class="text-gray-400 text-sm mt-2">Current Status: Currently in 4th Semester. CGPA (1st year): 7.45</p>
+                    </div>
+
+                    <!-- Class 12 -->
+                    <div class="relative pl-8 md:pl-12 border-l-4 border-gray-600">
+                        <div class="absolute -left-3 md:-left-4 top-0 w-6 h-6 bg-yellow-600 rounded-full border-4 border-[#0d1117]"></div>
+                        <p class="text-xs font-semibold uppercase text-yellow-400">2021</p>
+                        <h3 class="text-xl font-bold text-white mt-1">Class 12</h3>
+                        <p class="text-gray-300 italic">Govt. Sarvodaya Bal Vidyalaya, Nangloi, Delhi</p>
+                        <p class="text-gray-400 text-sm mt-2">Achieved 90.6% (Highest in the school).</p>
+                    </div>
+                </div>
+                <p class="mt-10 text-center text-gray-500 text-sm">
+                    **Additional Experience:** Includes 5 years of teaching experience.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-8 text-center border-t border-gray-700">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://www.linkedin.com/in/sachin-sharma-2111a8228" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition duration-300">
+                <span class="icon icon-linkedin w-6 h-6"></span>
+            </a>
+            <a href="https://github.com/sachinsharma4" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition duration-300">
+                <span class="icon icon-github w-6 h-6"></span>
+            </a>
+            <a href="mailto:sachinsharma7673@gmail.com" class="text-gray-400 hover:text-yellow-500 transition duration-300">
+                <span class="icon icon-mail w-6 h-6"></span>
+            </a>
+            <a href="tel:+918860110956" class="text-gray-400 hover:text-yellow-500 transition duration-300">
+                <span class="icon w-6 h-6" style="content: url('data:image/svg+xml;utf8,<svg class=\'icon\' viewBox=\'0 0 24 24\'><path d=\'M22 16.92v3a2 2 0 0 1-2 2A15.97 15.97 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2 12 12 0 0 0 3 7.5l-.89.89a1 1 0 0 0-.25 1.48A1 1 0 0 0 12 14.5a18 18 0 0 0 7.5-3.5 1 1 0 0 0 1.48-.25l.89-.89a12 12 0 0 0 7.5 3z\'/></svg>');"></span>
+            </a>
+        </div>
+        <p class="text-sm text-gray-500">
+            &copy; <span id="current-year"></span> Sachin Sharma.
+        </p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // JavaScript for Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            
+            // Toggle icon between 'menu' and 'close'
+            if (isHidden) {
+                menuIcon.classList.remove('icon-close');
+                menuIcon.classList.add('icon-menu');
+            } else {
+                menuIcon.classList.remove('icon-menu');
+                menuIcon.classList.add('icon-close');
+            }
+        });
+
+        // Close mobile menu when a link is clicked (for smooth scrolling)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('icon-close');
+                menuIcon.classList.add('icon-menu');
+            });
+        });
+    </script>
+</body>
+</html>
+
